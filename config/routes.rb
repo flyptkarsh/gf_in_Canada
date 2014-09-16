@@ -2,9 +2,12 @@ Rails.application.routes.draw do
   
   devise_for :users
   get 'home/index'
-
   root 'home#index'
-  
+
+
+  # route for outbound and inbound Twilio messages 
+  get '/twilio_reply' => 'twilio#reply'
+
   resources :my_girlfriends
 
   # The priority is based upon order of creation: first created -> highest priority.

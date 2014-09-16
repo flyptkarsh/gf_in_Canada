@@ -1,13 +1,19 @@
 class TwilioController < ApplicationController
 require 'twilio-ruby' 
-
-  # determines which message is sent
-  def replyGenerator
-
-  end 
-
   # sends the message 
-  def send(return_message, number_she_texts)
+  def reply 
+    # determines which message is sent
+
+    #Twilio messages have a body, to, and from, section in params.
+    to = params[:To]
+    from = params[:From]
+    body = params[:Body]
+
+    #number she texted is the number of the person texting their 'girlfriends'    
+    @girlfriend_responding = MyGirlfriend.find_by_number_she_texts(from)
+
+    
+  
     # put your own credentials here 
     account_sid = ENV["TWILIO_SID"]
     auth_token = ENV["TWILIO_TOKEN"]
