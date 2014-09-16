@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+
+
+    <title><%= content_for?(:title) ? yield(:title) : "Girlfriend in Canada" %></title>
+
+    <%= stylesheet_link_tag    "application" %>
+    <%= javascript_include_tag "vendor/modernizr" %>
+    <%= csrf_meta_tags %>
+  </head>
+
+  <body>
+
+  <nav class="top-bar" data-topbar role="navigation">
+    <ul class="title-area">
+      <li class="name">
+        <h1><a href="/">Girlfriend in Canada</a></h1>
+      </li>
+      <section class="top-bar-section">
+        <!-- Left Nav Section -->
+        <ul class="left">
+          <% if user_signed_in? %>
+            <li>
+            <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>        
+            </li>
+          <% else %>
+            <li>
+            <%= link_to('Login', new_user_session_path)  %>  
+            </li>
+          <% end %>
+        </ul>
+        <ul class="left">
+          <% if user_signed_in? %>
+            <li>
+            <%= link_to('Edit registration', edit_user_registration_path) %>
+            </li>
+          <% else %>
+            <li>
+            <%= link_to('Register', new_user_registration_path)  %>
+            </li>
+          <% end %>
+        </ul>
+        <% if user_signed_in? %>
+          <ul class="right">
+            <li class="has-dropdown">
+              <a href="#">Girlfriend Menu</a>
+              <ul class="dropdown">
+                <li><%= link_to('Girlfriend Index', my_girlfriends_path) %></li>
+                <li><%= link_to('New Girlfriend', my_girlfriends_path) %></li>
+              </ul>
+            </li>
+          </ul>
+        <% end %>
+      </section>
+    </ul>
+  </nav>
+
+  <div class="row">
+    <div class="large-3 columns">
+      <h2>About</h2>
+      <p>Not cool? No lady friend? No problem! Prove to your friends that you really do have a girlfriend by using Girlfriend in Canada to create a fake one for you. She will even text you back. Unfortunately she lives in Canada so you, and your friends, will never actually see her.</p>
+      <img src="http://s2.hubimg.com/u/4746521_f520.jpg">
+    </div>
+    <div class="large-9 columns">
+
+ 
+
+  <%= yield %>
+   </div> 
+  <%= javascript_include_tag "application" %>
+  </body>
+</html>

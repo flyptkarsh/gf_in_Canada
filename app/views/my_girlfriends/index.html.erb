@@ -1,0 +1,33 @@
+<h1>Listing of my "girlfriends"</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Hometown</th>
+      <th>Favorite food</th>
+      <th>Where we met</th>
+      <th>What turns me on</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @my_girlfriends.each do |my_girlfriend| %>
+      <tr>
+        <td><%= my_girlfriend.name %></td>
+        <td><%= my_girlfriend.hometown %></td>
+        <td><%= my_girlfriend.favorite_food %></td>
+        <td><%= my_girlfriend.where_we_met %></td>
+        <td><%= my_girlfriend.what_turns_me_on %></td>
+        <td><%= link_to 'Show', my_girlfriend %></td>
+        <td><%= link_to 'Edit', edit_my_girlfriend_path(my_girlfriend) %></td>
+        <td><%= link_to 'Destroy', my_girlfriend, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New My girlfriend', new_my_girlfriend_path %>
