@@ -4,9 +4,10 @@ Rails.application.routes.draw do
   get 'home/index'
   root 'home#index'
 
-
   # route for outbound and inbound Twilio messages 
   get '/twilio_reply' => 'twilio#reply'
+  
+  post '/twilio_reply' => 'twilio#reply'
 
   resources :my_girlfriends
 

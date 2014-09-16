@@ -31,6 +31,17 @@
     <%= f.label :what_turns_me_on %><br>
     <%= f.text_area :what_turns_me_on %>
   </div>
+  <div class="field">
+    <%= f.label :number_she_texts %><br>
+    <%= f.text_field :number_she_texts %>
+  </div>
+  <div class="field">
+    <%= f.label :is_current_girlfriend %><br>
+    <%= f.radio_button(:is_current_girlfriend, "Is current 'girlfriend'") %>
+    <%= f.label(:true, "Yes we are!") %>
+    <%= f.radio_button(:is_current_girlfriend, "Not current 'girlfriend'") %>
+    <%= f.label(:false, "Nah I am over her.") %>
+  </div>
   <div class="actions">
     <%= f.submit %>
   </div>

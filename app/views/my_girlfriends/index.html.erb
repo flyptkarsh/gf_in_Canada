@@ -4,10 +4,12 @@
   <thead>
     <tr>
       <th>Name</th>
-      <th>Hometown</th>
+      <th>Home town</th>
       <th>Favorite food</th>
       <th>Where we met</th>
       <th>What turns me on</th>
+      <th>Your number</th>
+      <th>Still my Boo</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -20,6 +22,8 @@
         <td><%= my_girlfriend.favorite_food %></td>
         <td><%= my_girlfriend.where_we_met %></td>
         <td><%= my_girlfriend.what_turns_me_on %></td>
+        <td><%= my_girlfriend.number_she_texts %></td>
+        <td><%= my_girlfriend.is_current_girlfriend %></td>
         <td><%= link_to 'Show', my_girlfriend %></td>
         <td><%= link_to 'Edit', edit_my_girlfriend_path(my_girlfriend) %></td>
         <td><%= link_to 'Destroy', my_girlfriend, method: :delete, data: { confirm: 'Are you sure?' } %></td>

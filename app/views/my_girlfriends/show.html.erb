@@ -27,5 +27,10 @@
   <%= @my_girlfriend.what_turns_me_on %>
 </p>
 
+<p>
+  <strong>Still my boo:</strong>
+  <%= @my_girlfriend.is_current_girlfriend %>
+</p>
+
 <%= link_to 'Edit', edit_my_girlfriend_path(@my_girlfriend) %> |
 <%= link_to 'Back', my_girlfriends_path %>
