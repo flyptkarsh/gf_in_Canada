@@ -2,6 +2,8 @@ source 'https://rubygems.org'
 
 gem 'foundation-rails'
 
+gem 'rails_12factor'
+
 gem 'twilio-ruby'
 
 gem 'devise'
