@@ -28,7 +28,7 @@ require 'twilio-ruby'
 
     if body == 'name'
       return_message = @name
-    elsif / eat /.match(body) || /food/.match(body) || /dinner/.match(body) || /lunch/.match(body)
+    elsif / eat /.match(body) || /food/.match(body) || /dinner/.match(body) || /lunch/.match(body) || / ate/.match(body)
       food_responses_array = [
         "I wish I was on the beach with you eating ",
         "Too bad I am sooooo far you sexy man, I would rather be on your couch eating ", 
@@ -40,7 +40,7 @@ require 'twilio-ruby'
 
       return_message = (food_responses_array.sample) << @fav_food
 
-    elsif /home/.match(body) || /house/.match(body) || /come/.match(body) || /place/.match(body) || /casa/.match(body)
+    elsif /home/.match(body) || /house/.match(body) || /come/.match(body) || /place/.match(body) || /casa/.match(body) || / at/.match(body)
       hometown_responses_array = [
         "I wish you were here with me in ",
         "It is so cold here, I wish you were here to warm me up in ", 
@@ -52,7 +52,7 @@ require 'twilio-ruby'
       ]
       return_message = (hometown_responses_array.sample) << @hometown
     
-    elsif /met/.match(body) || /meet/.match(body) || /first time/.match(body) || /meeting/.match(body)
+    elsif /met/.match(body) || /meet/.match(body) || /first time/.match(body) || /meeting/.match(body) || /together/.match(body) 
       meeting_place_responses_array = [
         "Fate brought us together in ", 
         "I don't know what I would do if I had not met you in ", 
@@ -63,7 +63,7 @@ require 'twilio-ruby'
       ]
       return_message = (meeting_place_responses_array.sample) << @meetting_place
     
-    elsif /hot/.match(body) || /hook up/.match(body) || /turn on/.match(body) || /turn-on/.match(body) || /sex/.match(body) 
+    elsif /hot/.match(body) || /hook up/.match(body) || /turn on/.match(body) || /turn-on/.match(body) || /sex/.match(body) || /love/.match(body) || /kiss/.match(body)
       turn_ons_response_array = [
         "I get so hot when I think of you and me ", 
         "Oh baby, I wish we were ", 
