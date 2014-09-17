@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
-
+    <link href='http://fonts.googleapis.com/css?family=Holtwood+One+SC' rel='stylesheet' type='text/css'>
 
     <title><%= content_for?(:title) ? yield(:title) : "Girlfriend in Canada" %></title>
 
@@ -51,7 +51,7 @@
               <a href="#">Girlfriend Menu</a>
               <ul class="dropdown">
                 <li><%= link_to('Girlfriend Index', my_girlfriends_path) %></li>
-                <li><%= link_to('New Girlfriend', my_girlfriends_path) %></li>
+                <li><%= link_to('New Girlfriend', new_my_girlfriend_path) %></li>
               </ul>
             </li>
           </ul>
@@ -62,16 +62,16 @@
 
   <div class="row">
     <div class="large-3 columns">
-      <h2>About</h2>
-      <p>Not cool? No lady friend? No problem! Prove to your friends that you really do have a girlfriend by using Girlfriend in Canada to create a fake one for you. She will even text you back. Unfortunately she lives in Canada so you, and your friends, will never actually see her.</p>
-      <img src="http://s2.hubimg.com/u/4746521_f520.jpg">
+      <div class="panel callout radius">
+        <h2>About</h2>
+        <p>Not cool? No lady friend? No problem! Prove to your friends that you really do have a girlfriend by using Girlfriend in Canada to create a fake one for you. She will even text you back. Unfortunately she lives in Canada so you, and your friends, will never actually see her.</p>
+      </div>
     </div>
     <div class="large-9 columns">
-
- 
-
+      <div class="panel">
   <%= yield %>
-   </div> 
+      </div> 
+    </div>
   <%= javascript_include_tag "application" %>
   </body>
 </html>

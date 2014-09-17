@@ -5,7 +5,7 @@ class MyGirlfriendsController < ApplicationController
   # GET /my_girlfriends
   # GET /my_girlfriends.json
   def index
-    @my_girlfriends = MyGirlfriend.all
+    @my_girlfriends = MyGirlfriend.where(user_id:current_user.id)
   end
 
   # GET /my_girlfriends/1
@@ -26,7 +26,7 @@ class MyGirlfriendsController < ApplicationController
   # POST /my_girlfriends.json
   def create
     @my_girlfriend = MyGirlfriend.new(my_girlfriend_params)
-
+    @my_girlfriend.user_id = current_user.id
     respond_to do |format|
       if @my_girlfriend.save
         format.html { redirect_to @my_girlfriend, notice: 'My girlfriend was successfully created.' }
