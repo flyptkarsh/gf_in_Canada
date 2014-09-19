@@ -31,11 +31,11 @@ require 'twilio-ruby'
     elsif / eat /.match(body) || /food/.match(body) || /dinner/.match(body) || /lunch/.match(body) || / ate/.match(body)
       food_responses_array = [
         "I wish I was on the beach with you eating ",
-        "Too bad I am sooooo far you sexy man, I would rather be on your couch eating ", 
+        "Too bad I am sooooo far from you sexy man, I would rather be on your couch eating ", 
         "OMG I just ate 10lbs of ", 
-        "I don't know how I have such an amazing body considering I always eat ",
+        "I don't know how I have such an amazing body considering I always eat dozens of ",
         "I wish you were here I just made ", 
-        "Do you like"
+        "Do you like "
         ]
 
       return_message = (food_responses_array.sample) << @fav_food
@@ -56,14 +56,14 @@ require 'twilio-ruby'
       meeting_place_responses_array = [
         "Fate brought us together in ", 
         "I don't know what I would do if I had not met you in ", 
-        "We were meat for each other otherwise we would have never me in ", 
+        "We were meat for each other otherwise we would have never met in ", 
         "What if we had never met in ", 
         "All I think about is the time we met in ", 
         "When ever I hear Justin Bieber's song 'Baby' I think of you "
       ]
       return_message = (meeting_place_responses_array.sample) << @meetting_place
     
-    elsif /hot/.match(body) || /hook up/.match(body) || /turn on/.match(body) || /turn-on/.match(body) || /sex/.match(body) || /love/.match(body) || /kiss/.match(body)
+    elsif /hot/.match(body) || /hook up/.match(body) || /turn on/.match(body) || /turn-on/.match(body) || /sex/.match(body) || /love/.match(body) || /kiss/.match(body) || /horny/.match(body)
       turn_ons_response_array = [
         "I get so hot when I think of you and me ", 
         "Oh baby, I wish we were ", 
@@ -97,9 +97,10 @@ require 'twilio-ruby'
     end
 
       happy_emoticon_array = [":)", ":*", ":-)", ":)", ":D", ":o)", ":]", ":3", 
-                        ":c)",":>", "=]", "8)", "=)", ":}", ":^)", ":っ)"]
+                              ":c)",":>", "=]", "8)", "=)", ":}", ":^)", ":っ)"]
       laugh_emoticon_array = [":-D","8-D", "8D", "x-D", "xD", "X-D", "XD", "=-D", "=D", "=-3", "=3", "B^D"]
     # return message random emoticon adder 
+    
     random_number = Random.new 
     if random_number.rand(1..2) == 1 
       return_message << " "<< (happy_emoticon_array.sample)
